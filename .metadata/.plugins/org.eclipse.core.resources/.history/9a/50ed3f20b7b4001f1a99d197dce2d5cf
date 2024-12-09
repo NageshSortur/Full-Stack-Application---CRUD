@@ -1,0 +1,5 @@
+package com.springboot.fullstack.simple_crud.Model;
+
+public class User {
+
+}

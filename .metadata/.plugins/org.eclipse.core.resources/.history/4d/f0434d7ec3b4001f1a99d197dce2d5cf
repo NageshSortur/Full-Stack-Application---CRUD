@@ -1,0 +1,21 @@
+package com.springboot.fullstack.simple_crud.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.springboot.fullstack.simple_crud.Repository.UserRepository;
+import com.springboot.fullstack.simple_crud.model.User;
+
+@RestController
+public class UserController {
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@PostMapping("/user")
+	User newUser(@RequestBody User newUser) {
+		return userRepository.save(newUser);
+	}
+}
